@@ -6,16 +6,16 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 14:36:20 by prossi            #+#    #+#             */
-/*   Updated: 2021/09/09 14:36:21 by prossi           ###   ########.fr       */
+/*   Updated: 2021/09/15 18:04:43 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*str1
-	char	*str2
+	char	*str1;
+	char	*str2;
 	size_t	i;
 
 	i = 0;

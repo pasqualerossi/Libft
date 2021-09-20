@@ -6,17 +6,17 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 14:38:06 by prossi            #+#    #+#             */
-/*   Updated: 2021/09/09 14:54:36 by prossi           ###   ########.fr       */
+/*   Updated: 2021/09/20 16:07:45 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	i;
 
-	i == 0;
+	i = 0;
 	while (str[i])
 		i++;
 	return (i);

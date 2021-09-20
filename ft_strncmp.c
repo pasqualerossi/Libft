@@ -6,24 +6,21 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 14:38:15 by prossi            #+#    #+#             */
-/*   Updated: 2021/09/09 14:38:16 by prossi           ###   ########.fr       */
+/*   Updated: 2021/09/20 16:10:38 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(const char *s1, char *s2, size_t n)
 {
-	unsigned int	i;
-
-	i = 0;
-	while ((s1[i] || s2[i]) && (i < n))
+	while (*s1 != '\0' && *s1 == *s2 && n > 0)
 	{
-		if (s1[i] < s2[i])
-			return (-1);
-		if (s1[i] > s2[i])
-			return (1);
-		i++;
+		s1++;
+		s2++;
+		n--;
 	}
-	return (0);
+	if (n == 0)
+		return (0);
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }

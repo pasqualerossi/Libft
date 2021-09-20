@@ -6,32 +6,57 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 11:58:05 by prossi            #+#    #+#             */
-/*   Updated: 2021/09/15 13:18:22 by prossi           ###   ########.fr       */
+/*   Updated: 2021/09/20 16:37:53 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static unsigned int	ft_numsize(int n)
+{
+	unsigned int	len;
+	unsigned int	num;
+
+	len = 0;
+	if (n < 0)
+	{
+		len += 1;
+		n *= -1;
+	}
+	num = n;
+	while (num != 0)
+	{
+		num = num / 10;
+		len++;
+	}
+	return (len);
+}
+
 char	*ft_itoa(int n)
 {
-	char	*str;
+	char			*str;
+	unsigned int	num;
+	unsigned int	len;
 
-	if (!(str (char *)malloc(sizeof(char) * 2)))
+	len = ft_numsize(n);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
 		return (NULL);
-	if (n == -2147483648)
-		return (ft_strcpy(str, "-2147483648"));
 	if (n < 0)
 	{
 		str[0] = '-';
-		str[1] = '\0';
-		str = ft_strjoin(str, ft_itoa(-n));
+		num = -n;
 	}
-	else if (n >= 10)
-		str = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
-	else if (n < 10 && n >= 0)
+	else
+		num = n;
+	if (num == 0)
+		str[0] = '0';
+	str[len + 1] = '\0';
+	while (num != 0)
 	{
-		str[0] = n + '0';
-		str[1] = '\0';
+		str[len - 1] = (num % 10) + '0';
+		num = num / 10;
+		len--;
 	}
 	return (str);
 }
