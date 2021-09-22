@@ -6,7 +6,7 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 11:58:05 by prossi            #+#    #+#             */
-/*   Updated: 2021/09/20 16:37:53 by prossi           ###   ########.fr       */
+/*   Updated: 2021/09/22 19:44:23 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,15 @@
 static unsigned int	ft_numsize(int n)
 {
 	unsigned int	len;
-	unsigned int	num;
 
+	if (n == 0)
+		return (1);
 	len = 0;
 	if (n < 0)
-	{
 		len += 1;
-		n *= -1;
-	}
-	num = n;
-	while (num != 0)
+	while (n != 0)
 	{
-		num = num / 10;
+		n /= 10;
 		len++;
 	}
 	return (len);
@@ -51,7 +48,7 @@ char	*ft_itoa(int n)
 		num = n;
 	if (num == 0)
 		str[0] = '0';
-	str[len + 1] = '\0';
+	str[len] = '\0';
 	while (num != 0)
 	{
 		str[len - 1] = (num % 10) + '0';
