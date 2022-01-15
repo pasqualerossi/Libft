@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Take a string of characters that are supposed to be a number converted into an int. */
-
 #include "libft.h"
 
 int	ft_atoi(const char *str)
