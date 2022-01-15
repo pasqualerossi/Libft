@@ -10,13 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* This function allocates memory and returns a 'fresh' string of characters
- * terminated with a '\0' that is the char equivalent of the int passed in
- * the parameter. Negative numbers should be managed as well. If the allocation
- * fails the function will return NULL. NOTE: This is a recursive function. If
- * you are unfamiliar with recursive functions it is a function which either
- * calls itself or is in a potential cycle of function calls. */
-
 #include "libft.h"
 
 static unsigned int	ft_numsize(int n)
